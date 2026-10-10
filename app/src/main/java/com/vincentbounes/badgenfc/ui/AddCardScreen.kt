@@ -73,7 +73,6 @@ fun AddCardScreen(
 
             // Zone scan NFC
             if (scannedUid == null) {
-                // En attente de scan
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -89,7 +88,7 @@ fun AddCardScreen(
                 ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Icon(
-                            Icons.Default.Nfc,
+                            Icons.Default.Contactless,
                             contentDescription = null,
                             modifier = Modifier.size(48.dp),
                             tint = MaterialTheme.colorScheme.primary
@@ -109,7 +108,6 @@ fun AddCardScreen(
                     }
                 }
             } else {
-                // UID lu avec succès
                 Card(
                     modifier = Modifier.fillMaxWidth(),
                     colors = CardDefaults.cardColors(
@@ -155,7 +153,7 @@ fun AddCardScreen(
                 placeholder = { Text("ex: Badge Université") },
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true,
-                leadingIcon = { Icon(Icons.Default.Label, null) }
+                leadingIcon = { Icon(Icons.Default.Badge, null) }
             )
 
             // Image optionnelle
@@ -181,7 +179,7 @@ fun AddCardScreen(
                         )
                     } else {
                         Icon(
-                            Icons.Default.AddPhotoAlternate,
+                            Icons.Default.Image,
                             contentDescription = null,
                             tint = MaterialTheme.colorScheme.outline
                         )
@@ -219,7 +217,7 @@ fun AddCardScreen(
                 enabled = scannedUid != null && title.isNotBlank(),
                 shape = RoundedCornerShape(12.dp)
             ) {
-                Icon(Icons.Default.Save, null)
+                Icon(Icons.Default.Done, null)
                 Spacer(Modifier.width(8.dp))
                 Text("Enregistrer le badge", fontWeight = FontWeight.SemiBold)
             }
