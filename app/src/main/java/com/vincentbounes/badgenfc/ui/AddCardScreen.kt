@@ -71,6 +71,7 @@ fun AddCardScreen(
             verticalArrangement = Arrangement.spacedBy(20.dp)
         ) {
 
+            // Zone scan NFC
             if (scannedUid == null) {
                 Box(
                     modifier = Modifier
@@ -87,7 +88,7 @@ fun AddCardScreen(
                 ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Icon(
-                            imageVector = Icons.Default.Wifi,
+                            Icons.Default.Add,
                             contentDescription = null,
                             modifier = Modifier.size(48.dp),
                             tint = MaterialTheme.colorScheme.primary
@@ -119,7 +120,7 @@ fun AddCardScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Icon(
-                            imageVector = Icons.Default.CheckCircle,
+                            Icons.Default.CheckCircle,
                             contentDescription = null,
                             tint = MaterialTheme.colorScheme.secondary,
                             modifier = Modifier.size(32.dp)
@@ -144,6 +145,7 @@ fun AddCardScreen(
                 }
             }
 
+            // Titre
             OutlinedTextField(
                 value = title,
                 onValueChange = { title = it },
@@ -151,9 +153,10 @@ fun AddCardScreen(
                 placeholder = { Text("ex: Badge Université") },
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true,
-                leadingIcon = { Icon(imageVector = Icons.Default.Edit, contentDescription = null) }
+                leadingIcon = { Icon(Icons.Default.Add, null) }
             )
 
+            // Image optionnelle
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -176,7 +179,7 @@ fun AddCardScreen(
                         )
                     } else {
                         Icon(
-                            imageVector = Icons.Default.InsertPhoto,
+                            Icons.Default.Add,
                             contentDescription = null,
                             tint = MaterialTheme.colorScheme.outline
                         )
@@ -195,6 +198,7 @@ fun AddCardScreen(
 
             Spacer(Modifier.weight(1f))
 
+            // Bouton sauvegarder
             Button(
                 onClick = {
                     if (scannedUid != null && title.isNotBlank()) {
@@ -213,7 +217,7 @@ fun AddCardScreen(
                 enabled = scannedUid != null && title.isNotBlank(),
                 shape = RoundedCornerShape(12.dp)
             ) {
-                Icon(imageVector = Icons.Default.Save, contentDescription = null)
+                Icon(Icons.Default.Add, null)
                 Spacer(Modifier.width(8.dp))
                 Text("Enregistrer le badge", fontWeight = FontWeight.SemiBold)
             }
