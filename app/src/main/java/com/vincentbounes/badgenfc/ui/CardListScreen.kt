@@ -55,7 +55,7 @@ fun CardListScreen(
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Icon(
-                        Icons.Default.CreditCard,
+                        Icons.Default.Style,
                         contentDescription = null,
                         modifier = Modifier.size(64.dp),
                         tint = MaterialTheme.colorScheme.outline
@@ -81,7 +81,6 @@ fun CardListScreen(
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                // Carte active en premier si elle existe
                 if (activeCard != null) {
                     item {
                         Text(
@@ -158,7 +157,6 @@ fun BadgeCard(
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            // Image ou icône par défaut
             Box(
                 modifier = Modifier
                     .size(56.dp)
@@ -178,7 +176,7 @@ fun BadgeCard(
                     )
                 } else {
                     Icon(
-                        Icons.Default.CreditCard,
+                        Icons.Default.ContactPage,
                         contentDescription = null,
                         tint = if (isActive) Color.White
                         else MaterialTheme.colorScheme.outline,
@@ -206,7 +204,7 @@ fun BadgeCard(
                     Spacer(Modifier.height(4.dp))
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(
-                            Icons.Default.Wifi,
+                            Icons.Default.Contactless,
                             contentDescription = null,
                             modifier = Modifier.size(14.dp),
                             tint = MaterialTheme.colorScheme.primary
@@ -228,7 +226,6 @@ fun BadgeCard(
                 }
             }
 
-            // Bouton supprimer
             IconButton(onClick = { showDeleteDialog = true }) {
                 Icon(
                     Icons.Default.Delete,
