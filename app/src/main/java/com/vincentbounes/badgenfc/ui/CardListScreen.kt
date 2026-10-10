@@ -42,7 +42,7 @@ fun CardListScreen(
         },
         floatingActionButton = {
             FloatingActionButton(onClick = onAddCard) {
-                Icon(Icons.Default.Add, contentDescription = "Ajouter une carte")
+                Icon(imageVector = Icons.Default.Add, contentDescription = "Ajouter une carte")
             }
         }
     ) { padding ->
@@ -55,7 +55,7 @@ fun CardListScreen(
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Icon(
-                        Icons.Default.Style,
+                        imageVector = Icons.Default.Person,
                         contentDescription = null,
                         modifier = Modifier.size(64.dp),
                         tint = MaterialTheme.colorScheme.outline
@@ -176,7 +176,7 @@ fun BadgeCard(
                     )
                 } else {
                     Icon(
-                        Icons.Default.ContactPage,
+                        imageVector = Icons.Default.Person,
                         contentDescription = null,
                         tint = if (isActive) Color.White
                         else MaterialTheme.colorScheme.outline,
@@ -204,7 +204,7 @@ fun BadgeCard(
                     Spacer(Modifier.height(4.dp))
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(
-                            Icons.Default.Contactless,
+                            imageVector = Icons.Default.Wifi,
                             contentDescription = null,
                             modifier = Modifier.size(14.dp),
                             tint = MaterialTheme.colorScheme.primary
@@ -228,7 +228,7 @@ fun BadgeCard(
 
             IconButton(onClick = { showDeleteDialog = true }) {
                 Icon(
-                    Icons.Default.Delete,
+                    imageVector = Icons.Default.Delete,
                     contentDescription = "Supprimer",
                     tint = MaterialTheme.colorScheme.error.copy(alpha = 0.6f)
                 )
