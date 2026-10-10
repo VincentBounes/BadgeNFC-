@@ -42,7 +42,7 @@ fun CardListScreen(
         },
         floatingActionButton = {
             FloatingActionButton(onClick = onAddCard) {
-                Icon(imageVector = Icons.Default.Add, contentDescription = "Ajouter une carte")
+                Icon(Icons.Default.Add, contentDescription = "Ajouter une carte")
             }
         }
     ) { padding ->
@@ -55,7 +55,7 @@ fun CardListScreen(
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Icon(
-                        imageVector = Icons.Default.Person,
+                        Icons.Default.Add,
                         contentDescription = null,
                         modifier = Modifier.size(64.dp),
                         tint = MaterialTheme.colorScheme.outline
@@ -176,7 +176,7 @@ fun BadgeCard(
                     )
                 } else {
                     Icon(
-                        imageVector = Icons.Default.Person,
+                        Icons.Default.Add,
                         contentDescription = null,
                         tint = if (isActive) Color.White
                         else MaterialTheme.colorScheme.outline,
@@ -204,7 +204,7 @@ fun BadgeCard(
                     Spacer(Modifier.height(4.dp))
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(
-                            imageVector = Icons.Default.Wifi,
+                            Icons.Default.CheckCircle,
                             contentDescription = null,
                             modifier = Modifier.size(14.dp),
                             tint = MaterialTheme.colorScheme.primary
@@ -228,7 +228,7 @@ fun BadgeCard(
 
             IconButton(onClick = { showDeleteDialog = true }) {
                 Icon(
-                    imageVector = Icons.Default.Delete,
+                    Icons.Default.Delete,
                     contentDescription = "Supprimer",
                     tint = MaterialTheme.colorScheme.error.copy(alpha = 0.6f)
                 )
